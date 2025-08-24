@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.16)
 
 project(basic-opengl-basic)
 
@@ -13,7 +13,11 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_directories(${PROJECT_NAME}
-	PRIVATE ext/glfw/src
+	PRIVATE
+	ext/glfw/src
 )
 
-target_link_libraries(${PROJECT_NAME} glfw "-framework OpenGL")
+target_link_libraries(${PROJECT_NAME} 
+	"-framework OpenGL"
+	glfw
+)
